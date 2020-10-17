@@ -1,0 +1,18 @@
+MATCH (Orchestrator:Service {name:"orchestrator"})
+MATCH (TitleS:Service {name:"title-staging"})
+MATCH (TitleU:Service {name:"title-update"})
+MATCH (TitleV:Service {name:"title-validator"})
+MATCH (AV:Service {name:"application-validator"})
+MATCH (EP:Service {name:"event-publisher"})
+MATCH (Failure:Service {name:"failure-handler"})
+MATCH (Rejection:Service {name:"rejection-processing"})
+MATCH (TemplateValidator:Service {name:"template-validator"})
+
+CREATE (Orchestrator)-[:CALLS]->(TitleS)
+CREATE (Orchestrator)-[:CALLS]->(TitleU)
+CREATE (Orchestrator)-[:CALLS]->(TitleV)
+CREATE (Orchestrator)-[:CALLS]->(AV)
+CREATE (Orchestrator)-[:CALLS]->(EP)
+CREATE (Orchestrator)-[:CALLS]->(Failure)
+CREATE (Orchestrator)-[:CALLS]->(Rejection)
+CREATE (Orchestrator)-[:CALLS]->(TemplateValidator);
