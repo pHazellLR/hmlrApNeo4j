@@ -1,1 +1,1 @@
-CREATE (:DB {name:"db2"})
+CREATE (:DB {name:"db2"});

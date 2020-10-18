@@ -6,6 +6,7 @@ export NEO4J_PASSWORD='password'
 
 $CYPHER_SHELL_PATH -a neo4j://localhost:7687 'MATCH (n) DETACH DELETE n;'
 $CYPHER_SHELL_PATH -a neo4j://localhost:7687 -f $(pwd)/creation-scripts/ap_services.cypher
+$CYPHER_SHELL_PATH -a neo4j://localhost:7687 -f $(pwd)/creation-scripts/databases.cypher
 
 cd $(pwd)/creation-scripts/dependencies
 
